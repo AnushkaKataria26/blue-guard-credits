@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Leaf, Building2, ShieldCheck, Calculator, Bot, TrendingUp, Award } from "lucide-react";
-import heroBackground from "@/assets/hero-background.jpg";
+import modernBackground from "@/assets/modern-background.jpg";
 
 const Login = () => {
   const [userType, setUserType] = useState<"industry" | "ngo">("industry");
@@ -40,29 +40,20 @@ const Login = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-ocean relative overflow-hidden">
-      {/* Background Image with Overlay */}
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 relative overflow-hidden">
+      {/* Modern Abstract Background */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBackground})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+        style={{ backgroundImage: `url(${modernBackground})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-ocean/80 via-ocean/60 to-earth/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 via-transparent to-emerald-900/20" />
       </div>
 
-      {/* Floating Particles Effect */}
+      {/* Elegant Geometric Shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className={`absolute w-2 h-2 bg-white/20 rounded-full animate-float`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.5}s`,
-              animationDuration: `${3 + Math.random() * 2}s`
-            }}
-          />
-        ))}
+        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-primary/10 to-ocean/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-earth/10 to-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-br from-ocean/5 to-earth/5 rounded-full blur-2xl animate-glow"></div>
       </div>
 
       {/* Header */}
@@ -71,11 +62,11 @@ const Login = () => {
           <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
             <Leaf className="w-6 h-6 text-white" />
           </div>
-          <span className="text-2xl font-bold text-white">Carbonix</span>
+          <span className="text-2xl font-bold text-slate-800">Carbonix</span>
         </Link>
         
         <div className="flex items-center space-x-4">
-          <Badge variant="secondary" className="bg-white/10 text-white border-white/20">
+          <Badge variant="secondary" className="bg-white/80 text-slate-700 border-slate-200">
             Beta Platform
           </Badge>
         </div>
@@ -86,14 +77,14 @@ const Login = () => {
         <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Side - Welcome Content */}
-          <div className="space-y-8 text-white">
+          <div className="space-y-8 text-slate-800">
             <div className="space-y-6">
               <div className="space-y-2">
                 <h1 className="text-5xl font-bold leading-tight">
                   Welcome to the Future of{" "}
                   <span className="text-primary">Carbon Credits</span>
                 </h1>
-                <p className="text-xl text-white/80 leading-relaxed">
+                <p className="text-xl text-slate-600 leading-relaxed">
                   Revolutionizing blue carbon ecosystems through blockchain technology, 
                   transparent verification, and intelligent emission management.
                 </p>
@@ -107,7 +98,7 @@ const Login = () => {
                   >
                     <feature.icon className="w-8 h-8 text-primary mb-2" />
                     <h3 className="font-semibold text-sm mb-1">{feature.title}</h3>
-                    <p className="text-xs text-white/70 leading-relaxed">{feature.description}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed">{feature.description}</p>
                   </div>
                 ))}
               </div>
@@ -115,15 +106,15 @@ const Login = () => {
               <div className="flex items-center space-x-6 pt-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary">1M+</div>
-                  <div className="text-sm text-white/70">Tons CO2 Offset</div>
+                  <div className="text-sm text-slate-600">Tons CO2 Offset</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary">500+</div>
-                  <div className="text-sm text-white/70">Active Projects</div>
+                  <div className="text-sm text-slate-600">Active Projects</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary">50+</div>
-                  <div className="text-sm text-white/70">Countries</div>
+                  <div className="text-sm text-slate-600">Countries</div>
                 </div>
               </div>
             </div>
@@ -131,7 +122,7 @@ const Login = () => {
 
           {/* Right Side - Login Form */}
           <div className="flex justify-center">
-            <Card className="w-full max-w-md bg-white/95 backdrop-blur-sm shadow-strong border-0">
+            <Card className="w-full max-w-md bg-white/95 backdrop-blur-sm shadow-strong border border-slate-200/50">
               <CardHeader className="space-y-4 text-center">
                 <CardTitle className="text-2xl font-bold text-carbon">
                   Sign In to Carbonix
@@ -234,8 +225,8 @@ const Login = () => {
       {/* Bottom Features Bar */}
       <div className="relative z-10 px-6 pb-6">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-            <div className="flex items-center justify-center space-x-8 text-sm text-white/80">
+          <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-slate-200/50 shadow-soft">
+            <div className="flex items-center justify-center space-x-8 text-sm text-slate-700">
               <div className="flex items-center space-x-2">
                 <TrendingUp className="w-4 h-4 text-primary" />
                 <span>Real-time Analytics</span>
