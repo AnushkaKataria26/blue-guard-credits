@@ -3,7 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { Leaf, Building2, ShieldCheck, Calculator, Bot, TrendingUp, Award, BarChart3, Globe, Zap } from "lucide-react";
-import heroBackground from "@/assets/hero-background.jpg";
+import heroGradient from "@/assets/hero-gradient.jpg";
+import ctaGradient from "@/assets/cta-gradient.jpg";
 
 const Index = () => {
   const stats = [
@@ -11,23 +12,6 @@ const Index = () => {
     { label: "Active Projects", value: "500+", color: "ocean" },
     { label: "Countries", value: "50+", color: "primary" },
     { label: "Organizations", value: "1000+", color: "carbon" }
-  ];
-
-  const features = [
-    {
-      icon: Building2,
-      title: "For Industries",
-      description: "Track and report emissions efficiently while purchasing verified carbon credits",
-      features: ["Track and report emissions", "Set reduction targets", "Purchase verified credits", "Real-time analytics"],
-      color: "ocean"
-    },
-    {
-      icon: ShieldCheck,
-      title: "For NGOs",
-      description: "Register carbon projects and generate transparent impact reports",
-      features: ["Register carbon projects", "Track project progress", "Generate impact reports", "Access funding opportunities"],
-      color: "earth"
-    }
   ];
 
   const tools = [
@@ -39,7 +23,7 @@ const Index = () => {
     },
     {
       icon: BarChart3,
-      title: "Analytics Dashboard",
+      title: "Analytics Dashboard", 
       description: "Real-time insights and trends for informed decision making",
       color: "ocean"
     },
@@ -69,11 +53,6 @@ const Index = () => {
         </div>
         
         <div className="flex items-center space-x-6">
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link to="/features" className="text-muted-foreground hover:text-foreground transition-colors">
-              Features
-            </Link>
-          </nav>
           <Link to="/login">
             <Button variant="ghost">Login</Button>
           </Link>
@@ -87,9 +66,9 @@ const Index = () => {
       <section className="relative overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBackground})` }}
+          style={{ backgroundImage: `url(${heroGradient})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-ocean/80 via-ocean/60 to-earth/80" />
+          <div className="absolute inset-0 bg-gradient-to-br from-ocean/40 via-transparent to-earth/40" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 py-24 text-center text-white">
@@ -128,46 +107,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl font-bold text-foreground">
-              Everything You Need for Carbon Management
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our platform provides comprehensive tools for every stakeholder in the carbon credit ecosystem
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="p-8 shadow-medium hover:shadow-strong transition-shadow">
-                <CardHeader className="space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <div className={`w-16 h-16 bg-${feature.color}-light rounded-lg flex items-center justify-center`}>
-                      <feature.icon className={`w-8 h-8 text-${feature.color}`} />
-                    </div>
-                    <div>
-                      <CardTitle className="text-2xl">{feature.title}</CardTitle>
-                      <CardDescription className="text-base">{feature.description}</CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  {feature.features.map((item, i) => (
-                    <div key={i} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span className="text-muted-foreground">{item}</span>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Tools Section */}
       <section className="py-24 bg-gradient-ocean">
         <div className="max-w-7xl mx-auto px-4">
@@ -197,8 +136,13 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/10"></div>
+      <section className="py-24 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${ctaGradient})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-ocean/50 to-earth/60" />
+        </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
           <div className="space-y-8">
             <h2 className="text-5xl font-bold">
